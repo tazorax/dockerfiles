@@ -8,6 +8,10 @@ on:
       - 'genisoimage/*'
     tags:
       - '!*'
+  pull_request:
+    paths:
+      - '.github/workflows/genisoimage.build.yml'
+      - 'genisoimage/*'
   workflow_dispatch:
 
 jobs:
