@@ -32,3 +32,10 @@ jobs:
           push: true
           tags: "tazorax/genisoimage:latest"
           platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v4
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: tazorax/dockerfiles
+          readme-filepath: ./genisoimage/README.md
