@@ -1,6 +1,6 @@
 # Genisoimage
-Provides:
-
+| Provides |
+| --- |
 | /usr/bin/cdda2mp3 |
 | /usr/bin/cdda2ogg |
 | /usr/bin/cdda2wav |
