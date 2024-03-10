@@ -4,21 +4,18 @@ on:
   push:
     branches: [ 'main' ]
     paths:
-      - '.github/workflows/phputils.build.yml'
-      - '*/Dockerfile'
+      - '.github/workflows/genisoimage.build.yml'
+      - 'genisoimage/*'
     tags:
       - '!*'
   pull_request:
     paths:
-      - '.github/workflows/phputils.build.yml'
-      - '*/Dockerfile'
+      - '.github/workflows/genisoimage.build.yml'
+      - 'genisoimage/*'
   workflow_dispatch:
 
 jobs:
   build-docker:
-    strategy:
-      matrix:
-        image: [genisoimage, phputils]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,9 +33,9 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: phputils/.
+          context: genisoimage/.
           push: ${{ github.ref == 'refs/heads/main' }}
-          tags: "tazorax/${{ matrix.image }}:latest"
+          tags: "tazorax/genisoimage:latest"
           platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v4
@@ -46,5 +43,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: tazorax/${{ matrix.image }}
-          readme-filepath: ./${{ matrix.image }}/README.md
+          repository: tazorax/genisoimage
+          readme-filepath: ./genisoimage/README.md
