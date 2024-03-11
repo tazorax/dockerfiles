@@ -1,4 +1,4 @@
-name: 🐳 Docker build & push
+name: 🐳 genisoimage
 
 on:
   push:
