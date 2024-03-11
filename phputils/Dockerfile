@@ -1,8 +1,5 @@
-ARG PHP_VERSION=8.3.3
-ARG COMPOSER_VERSION=2.6.2
+FROM composer:2.6.2 as composer_bin
 
-FROM composer:${COMPOSER_VERSION} as composerbin
+FROM php:8.3.3-cli-alpine
 
-FROM php:${PHP_VERSION}-cli-alpine
-
-COPY --from=composerbin /usr/bin/composer /usr/bin/composer
+COPY --from=composer_bin /usr/bin/composer /usr/bin/composer
