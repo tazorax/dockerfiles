@@ -17,3 +17,7 @@ updates:
     directory: "/phputils" # Location of package manifests
     schedule:
       interval: "weekly"
+  - package-ecosystem: "composer" # See documentation for possible values
+    directory: "/phputils" # Location of package manifests
+    schedule:
+      interval: "weekly"
