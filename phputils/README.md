@@ -2,6 +2,10 @@
 
 `docker pull tazorax/phputils:latest`
 
-| Provides          |
-|-------------------|
-| /usr/bin/composer |
+| Provides     |
+|--------------|
+| composer     |
+| php-cs-fixer |
+| phpstan      |
+| phploc       |
+| phpmd        |
