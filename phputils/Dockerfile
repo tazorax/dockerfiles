@@ -1,6 +1,6 @@
 FROM composer:2.8.1 as composer_bin
 
-FROM php:8.3.12-cli-alpine
+FROM php:8.3.13-cli-alpine
 
 COPY --from=composer_bin /usr/bin/composer /usr/bin/composer
 COPY composer.* /usr/local/src/
