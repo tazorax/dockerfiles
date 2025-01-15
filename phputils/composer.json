@@ -9,7 +9,7 @@
     "require": {
         "friendsofphp/php-cs-fixer": "^3.51",
         "phpunit/phpunit": "^11.0",
-        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan": "^2.1",
         "phploc/phploc": "^2.0",
         "phpmd/phpmd": "^2.15"
     }
