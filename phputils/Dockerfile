@@ -1,4 +1,4 @@
-FROM composer:2.8.4 as composer_bin
+FROM composer:2.8.5 as composer_bin
 
 FROM php:8.4.3-cli-alpine
 
